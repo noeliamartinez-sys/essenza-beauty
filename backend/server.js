@@ -1,12 +1,13 @@
 const app = require("./app");
 const sequelize = require("./config/database");
+const Product = require("./models/Product");
 
 const PORT = 3000;
 
 sequelize
-  .authenticate()
+  .sync()
   .then(() => {
-    console.log("Conexión a MySQL exitosa");
+    console.log("Base de datos sincronizada");
 
     app.listen(PORT, () => {
       console.log(`Servidor funcionando en puerto ${PORT}`);

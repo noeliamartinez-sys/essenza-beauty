@@ -1,13 +1,10 @@
 const express = require("express");
-
 const app = express();
+
+const productRoutes = require("./routes/productRoutes");
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
-  res.json({
-    mensaje: "Backend funcionando correctamente",
-  });
-});
+app.use("/products", productRoutes);
 
 module.exports = app;
