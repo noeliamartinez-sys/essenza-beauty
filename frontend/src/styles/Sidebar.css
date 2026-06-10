@@ -1,0 +1,20 @@
+.sidebar{
+  width:260px;
+
+  background:white;
+
+  padding:30px;
+
+  border-right:1px solid var(--border);
+
+  box-shadow:var(--shadow);
+}
+
+.sidebar h2{
+  margin-bottom:40px;
+}
+
+.sidebar li{
+  padding:14px 0;
+  cursor:pointer;
+}
