@@ -1,28 +1,51 @@
-import DashboardCard from "../components/DashboardCard";
+import { useState } from "react";
+import perfumesData from "../data/perfumes";
+
+import TablaPerfumes from "../components/TablaPerfumes";
+import Buscador from "../components/Buscador";
+import DetallePerfume from "../components/DetallePerfume";
+import ModalEliminar from "../components/ModalEliminar";
 
 function Dashboard() {
+  const [perfumes, setPerfumes] = useState(perfumesData);
+
+  const [busqueda, setBusqueda] = useState("");
+
+  const [detalle, setDetalle] = useState(null);
+
+  const [eliminar, setEliminar] = useState(null);
+
+  const perfumesFiltrados = perfumes.filter(
+    (p) =>
+      p.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
+      p.marca.toLowerCase().includes(busqueda.toLowerCase()),
+  );
+
+  const confirmarEliminar = () => {
+    setPerfumes(perfumes.filter((p) => p.id !== eliminar.id));
+
+    setEliminar(null);
+  };
+
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <div className="container mt-4">
+      <h1>Essenza Beauty</h1>
 
-      <DashboardCard
-        titulo="Total Productos"
-        valor="15"
+      <Buscador busqueda={busqueda} setBusqueda={setBusqueda} />
+
+      <TablaPerfumes
+        perfumes={perfumesFiltrados}
+        onVer={setDetalle}
+        onEditar={(p) => alert(`Editar ${p.nombre}`)}
+        onEliminar={setEliminar}
       />
 
-      <DashboardCard
-        titulo="Marcas"
-        valor="8"
-      />
+      <DetallePerfume perfume={detalle} />
 
-      <DashboardCard
-        titulo="Stock Total"
-        valor="149"
-      />
-
-      <DashboardCard
-        titulo="Valor Stock"
-        valor="$1.170.840"
+      <ModalEliminar
+        perfume={eliminar}
+        onConfirmar={confirmarEliminar}
+        onCancelar={() => setEliminar(null)}
       />
     </div>
   );

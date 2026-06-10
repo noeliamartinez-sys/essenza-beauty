@@ -1,0 +1,37 @@
+body {
+  background-color: #f8ecef;
+}
+
+.card {
+  border: none;
+  border-radius: 15px;
+}
+
+h1,
+h2,
+h3 {
+  color: #1f1f1f;
+}
+
+.table thead {
+  background-color: #d98ba6;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #d98ba6;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #c97895;
+}
+
+.form-control:focus {
+  border-color: #d98ba6;
+  box-shadow: none;
+}
+
+img {
+  border-radius: 10px;
+}
