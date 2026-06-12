@@ -2,59 +2,66 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 
-function Login() {
+function Register() {
+  const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await api.post("/users/login", {
+      await api.post("/users/register", {
+        nombre,
         email,
         password,
       });
 
-      localStorage.setItem("token", response.data.token);
+      alert("Usuario registrado");
 
-      alert("Login correcto");
-
-      navigate("/");
+      navigate("/login");
     } catch (error) {
       console.error(error);
-      alert("Error al iniciar sesión");
+      alert("Error al registrar usuario");
     }
   };
 
   return (
     <div className="container mt-5">
-      <h2>Iniciar Sesión</h2>
+      <h2>Registro</h2>
 
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleRegister}>
         <input
           className="form-control mb-3"
-          type="email"
+          placeholder="Nombre"
+          value={nombre}
+          onChange={(e) => setNombre(e.target.value)}
+        />
+
+        <input
+          className="form-control mb-3"
           placeholder="Email"
+          type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
 
         <input
           className="form-control mb-3"
-          type="password"
           placeholder="Contraseña"
+          type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button className="btn btn-primary">
-          Ingresar
+        <button className="btn btn-success">
+          Registrarse
         </button>
       </form>
     </div>
   );
 }
 
-export default Login;
+export default Register;

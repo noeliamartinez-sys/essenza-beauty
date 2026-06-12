@@ -10,7 +10,7 @@ const {
   deleteProduct,
 } = require("../controllers/productController");
 
-router.get("/", authMiddleware, getProducts);
+router.get("/", getProducts);
 
 router.post("/", createProduct);
 

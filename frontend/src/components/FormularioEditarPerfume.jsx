@@ -68,7 +68,12 @@ function FormularioEditarPerfume() {
           onChange={handleChange}
         />
 
-        <button className="btn btn-warning">Guardar Cambios</button>
+        <button
+          type="submit"
+          className="btn btn-warning"
+        >
+          Guardar Cambios
+        </button>
       </form>
     </div>
   );

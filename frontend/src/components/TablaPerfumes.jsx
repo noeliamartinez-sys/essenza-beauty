@@ -17,7 +17,8 @@ function TablaPerfumes({ perfumes, onVer, onEditar, onEliminar }) {
         {perfumes.map((perfume) => (
           <tr key={perfume.id}>
             <td>
-              <img src={perfume.imagen} alt={perfume.nombre} width="60" />
+             <img src={perfume.imagen} alt={perfume.nombre} width="60" />
+
             </td>
 
             <td>{perfume.nombre}</td>
