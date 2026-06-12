@@ -10,14 +10,11 @@ const {
   deleteProduct,
 } = require("../controllers/productController");
 
-router.get("/", authMiddleware, getProducts);
-
-router.post("/", createProduct);
-
+router.get("/", getProducts);
 router.get("/:id", getProductById);
 
-router.put("/:id", updateProduct);
-
-router.delete("/:id", deleteProduct);
+router.post("/", authMiddleware, createProduct);
+router.put("/:id", authMiddleware, updateProduct);
+router.delete("/:id", authMiddleware, deleteProduct);
 
 module.exports = router;
