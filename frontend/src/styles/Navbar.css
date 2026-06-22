@@ -1,12 +1,25 @@
-.navbar{
+import "../styles/Navbar.css";
 
-  background:white;
+function Navbar() {
+  return (
+    <nav className="navbar">
 
-  padding:20px;
+      <h2>ESSENZA BEAUTY</h2>
 
-  border-radius:15px;
+      <ul>
 
-  box-shadow:var(--shadow);
+        <li>Inicio</li>
 
-  margin-bottom:30px;
+        <li>Perfumes</li>
+
+        <li>Nosotros</li>
+
+        <li>Contacto</li>
+
+      </ul>
+
+    </nav>
+  );
 }
+
+export default Navbar;
