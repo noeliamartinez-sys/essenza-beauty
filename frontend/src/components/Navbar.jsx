@@ -1,25 +1,68 @@
 import "../styles/Navbar.css";
+import { useEffect, useState } from "react";
 
 function Navbar() {
+
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+
+    const cambiarNavbar = () => {
+
+      if (window.scrollY > 80) {
+        setScroll(true);
+      } else {
+        setScroll(false);
+      }
+
+    };
+
+    window.addEventListener("scroll", cambiarNavbar);
+
+    return () => window.removeEventListener("scroll", cambiarNavbar);
+
+  }, []);
+
   return (
-    <nav className="navbar">
 
-      <h2>ESSENZA BEAUTY</h2>
+    <nav className={scroll ? "navbar navbar-scroll" : "navbar"}>
 
-      <ul>
+      <div className="logo">
 
-        <li>Inicio</li>
+        <span>✦</span>
 
-        <li>Perfumes</li>
+        <h2>ESSENZA</h2>
 
-        <li>Nosotros</li>
+      </div>
 
-        <li>Contacto</li>
+      <div className="nav-links">
 
-      </ul>
+        <a href="#inicio">Inicio</a>
+
+        <a href="#marcas">Marcas</a>
+
+        <a href="#coleccion">Colección</a>
+
+        <a href="#nosotros">Nosotros</a>
+
+        <a href="#contacto">Contacto</a>
+
+      </div>
+
+      <div className="nav-icons">
+
+        <button>🔍</button>
+
+        <button>♡</button>
+
+        <button>👜</button>
+
+      </div>
 
     </nav>
+
   );
+
 }
 
 export default Navbar;

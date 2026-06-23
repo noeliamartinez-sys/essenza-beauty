@@ -1,0 +1,13 @@
+.product-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:35px;
+
+margin-top:50px;
+
+margin-bottom:80px;
+
+}

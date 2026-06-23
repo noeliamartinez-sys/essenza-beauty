@@ -1,56 +1,59 @@
-import { Link } from "react-router-dom";
 import "../styles/Sidebar.css";
 
-function Sidebar() {
-  const cerrarSesion = () => {
-    localStorage.removeItem("token");
-    window.location.href = "/login";
-  };
+function Sidebar({ categoria, setCategoria }) {
 
-  return (
-    <aside className="sidebar">
-      <h2>Essenza Beauty</h2>
+const categorias=[
 
-      <ul>
-        <li>
-          <Link to="/">Dashboard</Link>
-        </li>
+"Todos",
 
-        <li>
-          <Link to="/">Productos</Link>
-        </li>
+"Floral",
 
-        <li>
-          <Link to="/">Marcas</Link>
-        </li>
+"Dulce",
 
-        <li>
-          <Link to="/">Categorías</Link>
-        </li>
+"Frutal",
 
-        <li>
-          <Link to="/">Usuarios</Link>
-        </li>
+"Masculino",
 
-        <li>
-          <Link to="/">Reportes</Link>
-        </li>
+"Amaderado"
 
-        <li>
-          <Link to="/">Configuración</Link>
-        </li>
+];
 
-        <li>
-          <button
-            className="btn btn-danger mt-3"
-            onClick={cerrarSesion}
-          >
-            Cerrar sesión
-          </button>
-        </li>
-      </ul>
-    </aside>
-  );
+return(
+
+<div className="sidebar">
+
+<h3>
+
+Colección
+
+</h3>
+
+{
+
+categorias.map((item)=>(
+
+<button
+
+key={item}
+
+className={categoria===item?"activo":""}
+
+onClick={()=>setCategoria(item)}
+
+>
+
+{item}
+
+</button>
+
+))
+
+}
+
+</div>
+
+);
+
 }
 
 export default Sidebar;

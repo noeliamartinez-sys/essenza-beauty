@@ -1,0 +1,87 @@
+.newsletter{
+
+padding:120px 8%;
+
+background:#111;
+
+text-align:center;
+
+}
+
+.newsletter p{
+
+letter-spacing:5px;
+
+font-size:12px;
+
+color:#b9985a;
+
+margin-bottom:20px;
+
+}
+
+.newsletter h2{
+
+font-size:52px;
+
+font-weight:300;
+
+color:white;
+
+max-width:700px;
+
+margin:auto;
+
+margin-bottom:45px;
+
+}
+
+.newsletter-form{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.newsletter input{
+
+width:420px;
+
+padding:18px 25px;
+
+border-radius:40px;
+
+border:none;
+
+font-size:16px;
+
+}
+
+.newsletter button{
+
+padding:18px 40px;
+
+background:#b9985a;
+
+color:white;
+
+border-radius:40px;
+
+font-size:15px;
+
+font-weight:600;
+
+}
+
+.newsletter button:hover{
+
+background:white;
+
+color:#111;
+
+}

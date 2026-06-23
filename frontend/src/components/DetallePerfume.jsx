@@ -1,24 +1,83 @@
-function DetallePerfume({ perfume }) {
+import "../styles/DetallePerfume.css";
+
+function DetallePerfume({ perfume, cerrar }) {
+
   if (!perfume) return null;
 
   return (
-    <div className="card p-3 mt-4">
 
-      <img
-        src="https://via.placeholder.com/200x200?text=Perfume"
-        alt={perfume.nombre}
-        width="200"
-      />
+    <div className="detalle-overlay" onClick={cerrar}>
 
-      <h3>{perfume.nombre}</h3>
+      <div
+        className="detalle-modal"
+        onClick={(e) => e.stopPropagation()}
+      >
 
-      <p>Marca: {perfume.marca}</p>
-      <p>Categoría: {perfume.categoria}</p>
-      <p>Precio: ${perfume.precio}</p>
-      <p>Stock: {perfume.stock}</p>
+        <div className="detalle-imagen">
+
+          <img
+            src={perfume.imagen}
+            alt={perfume.nombre}
+          />
+
+        </div>
+
+        <div className="detalle-info">
+
+          <span className="detalle-marca">
+
+            {perfume.marca}
+
+          </span>
+
+          <h2>
+
+            {perfume.nombre}
+
+          </h2>
+
+          <div className="detalle-estrellas">
+
+            ★★★★★
+
+          </div>
+
+          <p>
+
+            Una fragancia sofisticada con una combinación elegante de notas exclusivas que aportan personalidad, frescura y una identidad única para cualquier ocasión.
+
+          </p>
+
+          <h3>
+
+            ${perfume.precio}
+
+          </h3>
+
+          <div className="detalle-botones">
+
+            <button>
+
+              Agregar al carrito
+
+            </button>
+
+            <button className="outline">
+
+              Seguir comprando
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
+
   );
+
 }
 
 export default DetallePerfume;

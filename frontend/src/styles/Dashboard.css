@@ -1,0 +1,28 @@
+.hero {
+  height: 80vh;
+  width: 100%;
+  background-image: url("https://images.pexels.com/photos/21008921/pexels-photo-21008921.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  background: rgba(0,0,0,0.55);
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  color: white;
+}
+
+.hero-logo {
+  width: 90px;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  letter-spacing: 2px;
+}

@@ -1,25 +1,137 @@
-import "../styles/Navbar.css";
+.navbar{
 
-function Navbar() {
-  return (
-    <nav className="navbar">
+position:fixed;
 
-      <h2>ESSENZA BEAUTY</h2>
+top:0;
 
-      <ul>
+left:0;
 
-        <li>Inicio</li>
+width:100%;
 
-        <li>Perfumes</li>
+height:82px;
 
-        <li>Nosotros</li>
+padding:0 7%;
 
-        <li>Contacto</li>
+display:flex;
 
-      </ul>
+justify-content:space-between;
 
-    </nav>
-  );
+align-items:center;
+
+z-index:9999;
+
+transition:.35s;
+
+background:transparent;
+
 }
 
-export default Navbar;
+.navbar-scroll{
+
+background:white;
+
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+}
+
+.logo span{
+
+color:#b9985a;
+
+font-size:22px;
+
+}
+
+.logo h2{
+
+font-size:26px;
+
+font-weight:300;
+
+letter-spacing:5px;
+
+color:#111;
+
+}
+
+.nav-links{
+
+display:flex;
+
+gap:38px;
+
+}
+
+.nav-links a{
+
+font-size:14px;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+color:#222;
+
+transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+color:#b9985a;
+
+}
+
+.nav-icons{
+
+display:flex;
+
+gap:15px;
+
+}
+
+.nav-icons button{
+
+width:42px;
+
+height:42px;
+
+border-radius:50%;
+
+background:#f5f5f5;
+
+border:none;
+
+font-size:16px;
+
+transition:.3s;
+
+}
+
+.nav-icons button:hover{
+
+background:#111;
+
+color:white;
+
+}
+
+@media(max-width:900px){
+
+.nav-links{
+
+display:none;
+
+}
+
+}

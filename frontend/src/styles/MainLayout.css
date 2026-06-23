@@ -1,9 +1,39 @@
-.layout{
-  display:flex;
-  min-height:100vh;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-.content{
-  flex:1;
-  padding:30px;
+body{
+
+background:#faf6f3;
+
+font-family:Segoe UI,sans-serif;
+
+overflow-x:hidden;
+
+}
+
+.layout{
+
+width:100%;
+
+min-height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.main-content{
+
+width:100%;
+
+max-width:1500px;
+
+margin:auto;
+
+padding:40px;
+
 }

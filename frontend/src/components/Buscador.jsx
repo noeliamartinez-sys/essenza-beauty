@@ -1,13 +1,32 @@
+import "../styles/Buscador.css";
+
 function Buscador({ busqueda, setBusqueda }) {
+
   return (
-    <input
-      type="text"
-      className="form-control mb-3"
-      placeholder="Buscar perfume..."
-      value={busqueda}
-      onChange={(e) => setBusqueda(e.target.value)}
-    />
+
+    <section className="buscador">
+
+      <div className="buscador-contenedor">
+
+        <h2>Encuentra tu fragancia ideal</h2>
+
+        <p>
+          Explora nuestra colección de perfumes exclusivos.
+        </p>
+
+        <input
+          type="text"
+          placeholder="Buscar por nombre o marca..."
+          value={busqueda}
+          onChange={(e) => setBusqueda(e.target.value)}
+        />
+
+      </div>
+
+    </section>
+
   );
+
 }
 
 export default Buscador;

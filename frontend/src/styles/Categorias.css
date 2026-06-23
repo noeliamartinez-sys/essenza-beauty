@@ -1,0 +1,65 @@
+.categorias{
+
+margin:70px 0;
+
+}
+
+.categorias h2{
+
+font-size:38px;
+
+margin-bottom:35px;
+
+text-align:center;
+
+color:#2c2c2c;
+
+}
+
+.categorias-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:30px;
+
+}
+
+.categoria-card{
+
+background:white;
+
+padding:45px;
+
+border-radius:25px;
+
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+transition:.3s;
+
+cursor:pointer;
+
+}
+
+.categoria-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.categoria-card span{
+
+font-size:55px;
+
+display:block;
+
+margin-bottom:20px;
+
+}
+
+.categoria-card h3{
+
+color:#d46a92;
+
+}

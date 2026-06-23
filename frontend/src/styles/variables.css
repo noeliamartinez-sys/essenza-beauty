@@ -1,18 +1,21 @@
-:root {
+:root{
 
-  --primary: #E8CFCF;
-  --secondary: #D8B4B4;
-  --accent: #C48B9F;
+--background:#fdf8f4;
 
-  --background: #FAF7F7;
+--secondary:#fffaf7;
 
-  --white: #FFFFFF;
+--gold:#c7a17a;
 
-  --text-dark: #2F2F2F;
+--gold-hover:#b48d67;
 
-  --border: #EAEAEA;
+--brown:#7b5e57;
 
-  --shadow:
-    0px 4px 15px rgba(0,0,0,0.08);
+--dark:#2c2c2c;
+
+--white:#ffffff;
+
+--shadow:0 10px 30px rgba(0,0,0,.08);
+
+--radius:18px;
 
 }

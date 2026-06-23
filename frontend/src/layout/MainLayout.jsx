@@ -1,22 +1,25 @@
-import Sidebar from "../components/Sidebar";
-import Navbar from "../components/Navbar";
-import Dashboard from "../pages/Dashboard";
+import React from "react";
+import { Outlet, Link } from "react-router-dom";
+import "../styles/layout.css";
 
-import "../styles/MainLayout.css";
-
-function MainLayout() {
+export default function MainLayout() {
   return (
     <div className="layout">
 
-      <Sidebar />
 
-      <div className="content">
-        <Navbar />
-        <Dashboard />
-      </div>
+      <aside className="sidebar">
+        <h2>Essenza Beauty</h2>
+
+        <nav>
+          <Link to="/">Home</Link>
+          <Link to="/productos">Productos</Link>
+        </nav>
+      </aside>
+
+      <main className="content">
+        <Outlet />
+      </main>
 
     </div>
   );
 }
-
-export default MainLayout;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../services/api";
 import TablaPerfumes from "../components/TablaPerfumes";
-
+import src from "..assets/hero.jpg";
 function Perfumes() {
   const [perfumes, setPerfumes] = useState([]);
 
