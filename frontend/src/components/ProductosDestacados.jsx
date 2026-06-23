@@ -1,49 +1,59 @@
-import perfumes from "../data/perfumes";
-import ProductCard from "./ProductCard";
 import "../styles/ProductosDestacados.css";
+import ProductCard from "./ProductCard";
 
-function ProductosDestacados({ onSelect }) {
-
-  const destacados = perfumes.slice(0,4);
+function ProductosDestacados({ perfumes, onSelect }) {
 
   return (
 
-    <section
-      className="productos-destacados"
-      id="destacados"
-    >
+    <section className="destacados" id="coleccion">
 
-      <p>
+      <div className="titulo-section">
 
-        SELECCIÓN
+        <span>
 
-      </p>
+          ESSENZA COLLECTION
 
-      <h2>
+        </span>
 
-        Perfumes Destacados
+        <h2>
 
-      </h2>
+          Fragancias que marcan tendencia
+
+        </h2>
+
+        <p>
+
+          Una selección exclusiva de las casas de perfumería más reconocidas del mundo.
+
+        </p>
+
+      </div>
 
       <div className="destacados-grid">
 
-        {
+        {perfumes.map((perfume) => (
 
-          destacados.map((perfume)=>(
+          <ProductCard
 
-            <ProductCard
+            key={perfume.id}
 
-              key={perfume.id}
+            perfume={perfume}
 
-              perfume={perfume}
+            onClick={onSelect}
 
-              onClick={onSelect}
+          />
 
-            />
+        ))}
 
-          ))
+      </div>
 
-        }
+      <div className="ver-mas">
+
+        <button>
+
+          Ver colección completa
+
+        </button>
 
       </div>
 

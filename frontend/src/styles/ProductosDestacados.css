@@ -1,34 +1,56 @@
-.productos-destacados{
+.destacados{
 
-padding:100px 8%;
+padding:120px 8%;
 
 background:#faf8f5;
 
 }
 
-.productos-destacados p{
+.titulo-section{
 
 text-align:center;
 
-letter-spacing:4px;
+max-width:700px;
+
+margin:auto;
+
+margin-bottom:70px;
+
+}
+
+.titulo-section span{
 
 color:#b9985a;
 
-font-size:12px;
+letter-spacing:4px;
+
+font-size:13px;
+
+display:block;
 
 margin-bottom:15px;
 
 }
 
-.productos-destacados h2{
+.titulo-section h2{
 
-text-align:center;
-
-font-size:48px;
+font-size:58px;
 
 font-weight:300;
 
-margin-bottom:60px;
+margin-bottom:25px;
+
+color:#111;
+
+}
+
+.titulo-section p{
+
+font-size:18px;
+
+line-height:32px;
+
+color:#666;
 
 }
 
@@ -36,8 +58,42 @@ margin-bottom:60px;
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(290px,1fr));
 
 gap:35px;
+
+}
+
+.ver-mas{
+
+display:flex;
+
+justify-content:center;
+
+margin-top:70px;
+
+}
+
+.ver-mas button{
+
+padding:18px 42px;
+
+background:#111;
+
+color:white;
+
+border-radius:40px;
+
+font-size:15px;
+
+letter-spacing:2px;
+
+transition:.3s;
+
+}
+
+.ver-mas button:hover{
+
+background:#b9985a;
 
 }
