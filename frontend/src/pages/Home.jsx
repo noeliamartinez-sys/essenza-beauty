@@ -17,7 +17,7 @@ import About from "../components/About";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import DetallePerfume from "../components/DetallePerfume";
-
+import LuxurySection from "../components/LuxurySection";
 import "../styles/Home.css";
 
 function Home() {
@@ -59,7 +59,7 @@ function Home() {
       <Navbar />
 
       <Hero />
-
+<LuxurySection/>
       <Stats />
 
       <Marcas />

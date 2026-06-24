@@ -44,7 +44,7 @@ function About() {
       <div className="about-right">
 
         <img
-          src="https://images.pexels.com/photos/965989/pexels-photo-965989.jpeg"
+          src="https://images.pexels.com/photos/19235971/pexels-photo-19235971.jpeg?_gl=1*1wuhl8t*_ga*MTc3NjgxMzM1MS4xNzgwOTUxNTU0*_ga_8JE65Q40S6*czE3ODIyNTYyMzgkbzUkZzEkdDE3ODIyNTgxNzQkajM1JGwwJGgw"
           alt="Perfume"
         />
 

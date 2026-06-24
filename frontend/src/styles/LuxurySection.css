@@ -1,0 +1,85 @@
+.luxury-section{
+
+padding:110px 8%;
+
+display:flex;
+
+justify-content:center;
+
+background:#faf8f5;
+
+}
+
+.luxury-text{
+
+max-width:820px;
+
+text-align:center;
+
+}
+
+.luxury-text span{
+
+letter-spacing:5px;
+
+font-size:13px;
+
+color:#b9985a;
+
+}
+
+.luxury-text h2{
+
+font-size:62px;
+
+font-weight:300;
+
+margin:30px 0;
+
+color:#111;
+
+line-height:1.1;
+
+}
+
+.luxury-text p{
+
+font-size:20px;
+
+line-height:36px;
+
+color:#666;
+
+max-width:700px;
+
+margin:auto;
+
+}
+
+.luxury-text button{
+
+margin-top:45px;
+
+padding:18px 40px;
+
+border:none;
+
+border-radius:50px;
+
+background:#111;
+
+color:white;
+
+font-size:15px;
+
+letter-spacing:2px;
+
+transition:.3s;
+
+}
+
+.luxury-text button:hover{
+
+background:#b9985a;
+
+}

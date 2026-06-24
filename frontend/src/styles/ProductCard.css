@@ -1,44 +1,62 @@
 .product-card{
 
-background:white;
+background:#ffffff;
 
-border-radius:24px;
+border-radius:22px;
 
 overflow:hidden;
 
-box-shadow:0 10px 30px rgba(0,0,0,.05);
-
 transition:.35s;
 
-position:relative;
-
 cursor:pointer;
+
+box-shadow:0 10px 30px rgba(0,0,0,.06);
+
+display:flex;
+
+flex-direction:column;
 
 }
 
 .product-card:hover{
 
-transform:translateY(-12px);
+transform:translateY(-8px);
 
-box-shadow:0 25px 60px rgba(0,0,0,.12);
+box-shadow:0 20px 50px rgba(0,0,0,.12);
 
 }
 
-.product-card img{
+.product-image{
 
 width:100%;
 
 height:360px;
 
-object-fit:cover;
+overflow:hidden;
 
-transition:.4s;
+position:relative;
+
+background:transparent;
+
+display:block;
 
 }
 
-.product-card:hover img{
+.product-image img{
 
-transform:scale(1.04);
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.45s;
+
+}
+
+.product-card:hover .product-image img{
+
+transform:scale(1.06);
 
 }
 
@@ -50,11 +68,11 @@ top:18px;
 
 left:18px;
 
-background:#111;
+background:rgba(0,0,0,.85);
 
 color:white;
 
-padding:8px 18px;
+padding:8px 16px;
 
 border-radius:30px;
 
@@ -62,25 +80,27 @@ font-size:11px;
 
 letter-spacing:2px;
 
-z-index:50;
-
 }
 
 .product-info{
 
 padding:28px;
 
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
 }
 
-.marca{
+.product-brand{
 
-color:#b9985a;
+font-size:12px;
 
-font-size:15px;
+letter-spacing:2px;
 
-letter-spacing:3px;
-
-margin-bottom:15px;
+color:#8c8c8c;
 
 text-transform:uppercase;
 
@@ -88,37 +108,41 @@ text-transform:uppercase;
 
 .product-info h3{
 
-font-size:20px;
+font-size:26px;
 
-font-weight:300;
+font-weight:400;
 
-margin-bottom:15px;
-
-}
-
-.product-info span{
-
-display:block;
-
-font-size:24px;
-
-font-weight:700;
-
-margin-bottom:20px;
+color:#111;
 
 }
 
-.product-buttons{
+.stars{
 
-display:flex;
+color:#b9985a;
 
-gap:10px;
+font-size:14px;
 
 }
 
-.product-buttons button{
+.price-row{
 
-flex:1;
+font-size:30px;
+
+font-weight:600;
+
+margin-top:5px;
+
+}
+
+.product-info button{
+
+margin-top:18px;
+
+background:#111;
+
+color:white;
+
+border:none;
 
 padding:14px;
 
@@ -126,26 +150,14 @@ border-radius:40px;
 
 font-size:14px;
 
-}
+letter-spacing:1px;
 
-.product-buttons button:first-child{
-
-background:#111;
-
-color:white;
+transition:.3s;
 
 }
 
-.product-buttons button:last-child{
-
-background:#0b0b0b;
-
-}
-
-.product-buttons button:hover{
+.product-info button:hover{
 
 background:#b9985a;
-
-color:white;
 
 }

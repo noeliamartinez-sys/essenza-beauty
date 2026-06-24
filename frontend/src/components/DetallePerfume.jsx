@@ -44,7 +44,7 @@ function DetallePerfume({ perfume, cerrar }) {
 
           <p>
 
-            Una fragancia sofisticada con una combinación elegante de notas exclusivas que aportan personalidad, frescura y una identidad única para cualquier ocasión.
+  {perfume.descripcion}
 
           </p>
 

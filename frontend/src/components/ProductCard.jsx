@@ -1,72 +1,56 @@
 import "../styles/ProductCard.css";
+import { useCart } from "../context/CartContext";
 
-function ProductCard({ perfume,onClick }) {
+function ProductCard({ perfume, onClick }) {
 
-return(
+  const { agregarProducto } = useCart();
 
-<div
+  return (
 
-className="product-card"
+    <div className="product-card">
 
-onClick={()=>onClick(perfume)}
+      <div
+        className="product-image"
+        onClick={() => onClick(perfume)}
+      >
 
->
+        <img
+          src={perfume.imagen}
+          alt={perfume.nombre}
+        />
 
-<div className="badge">
+      </div>
 
-Original
+      <div className="product-info">
 
-</div>
+        <p className="product-brand">
+          {perfume.marca}
+        </p>
 
-<img
+        <h3>
+          {perfume.nombre}
+        </h3>
 
-src={perfume.imagen}
+        <div className="stars">
+          ★★★★★
+        </div>
 
-alt={perfume.nombre}
+        <div className="price-row">
+          ${perfume.precio}
+        </div>
 
-/>
+        <button
+          className="add-cart-btn"
+          onClick={() => agregarProducto(perfume)}
+        >
+          Agregar al carrito
+        </button>
 
-<div className="product-info">
+      </div>
 
-<p className="marca">
+    </div>
 
-{perfume.marca}
-
-</p>
-
-<h3>
-
-{perfume.nombre}
-
-</h3>
-
-<span>
-
-${perfume.precio}
-
-</span>
-
-<div className="product-buttons">
-
-<button>
-
-Ver detalles
-
-</button>
-
-<button>
-
-Agregar
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-);
+  );
 
 }
 
