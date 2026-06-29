@@ -249,3 +249,8 @@ background:#faf7f2;
 color:#b9985a;
 
 }
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
