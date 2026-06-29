@@ -272,3 +272,29 @@ color:#b9985a;
   color: inherit;
   white-space: nowrap;
 }
+.user-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: white;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  z-index: 999;
+  min-width: 160px;
+}
+.dropdown-menu button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
