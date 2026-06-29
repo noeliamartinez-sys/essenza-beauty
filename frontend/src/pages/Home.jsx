@@ -10,7 +10,6 @@ import Stats from "../components/Stats";
 import Explorar from "../components/Explorar";
 import Buscador from "../components/Buscador";
 import ProductosDestacados from "../components/ProductosDestacados";
-import Sidebar from "../components/Sidebar";
 import ProductCard from "../components/ProductCard";
 import About from "../components/About";
 import Newsletter from "../components/Newsletter";
@@ -23,12 +22,20 @@ import "../styles/Home.css";
 function Home() {
 
   const [carritoAbierto, setCarritoAbierto] = useState(false);
-
   const [selected, setSelected] = useState(null);
-
   const [busqueda, setBusqueda] = useState("");
-
   const [categoria, setCategoria] = useState("Todos");
+
+  const marcas = [
+    "Todos",
+    "Chanel",
+    "Dior",
+    "YSL",
+    "Armani",
+    "Tom Ford",
+    "Versace",
+    "Paco Rabanne"
+  ];
 
   const filtrados = perfumes.filter((perfume) => {
 
@@ -38,7 +45,7 @@ function Home() {
 
     const coincideCategoria =
       categoria === "Todos" ||
-      perfume.categoria === categoria;
+      perfume.marca === categoria;
 
     return coincideBusqueda && coincideCategoria;
 
@@ -50,9 +57,7 @@ function Home() {
 
       <BannerSuperior />
 
-      <Navbar
-        abrirCarrito={() => setCarritoAbierto(true)}
-      />
+      <Navbar abrirCarrito={() => setCarritoAbierto(true)} />
 
       <Hero />
 
@@ -65,11 +70,6 @@ function Home() {
         setCategoria={setCategoria}
       />
 
-      <Buscador
-        busqueda={busqueda}
-        setBusqueda={setBusqueda}
-      />
-
       <ProductosDestacados />
 
       <section
@@ -77,10 +77,26 @@ function Home() {
         id="coleccion"
       >
 
-        <Sidebar
-          categoria={categoria}
-          setCategoria={setCategoria}
+        <Buscador
+          busqueda={busqueda}
+          setBusqueda={setBusqueda}
         />
+
+        <div className="marcas-filtro">
+
+          {marcas.map((marca) => (
+
+            <button
+              key={marca}
+              className={categoria === marca ? "marca-activa" : ""}
+              onClick={() => setCategoria(marca)}
+            >
+              {marca}
+            </button>
+
+          ))}
+
+        </div>
 
         <div className="catalogo-grid">
 

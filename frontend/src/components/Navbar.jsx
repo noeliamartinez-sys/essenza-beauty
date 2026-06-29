@@ -111,10 +111,17 @@ function Navbar({ abrirCarrito }) {
               to="/login"
               className="icon-btn"
             >
+              <Link
+  to="/dashboard"
+  className="dropdown-link"
+>
+  Panel de administración
+</Link>
 
               <User size={20}/>
 
             </Link>
+            
 
           )
 

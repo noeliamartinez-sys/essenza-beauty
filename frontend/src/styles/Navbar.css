@@ -224,3 +224,28 @@ background:#faf7f2;
 color:#b9985a;
 
 }
+.dropdown-link{
+
+display:flex;
+
+align-items:center;
+
+padding:17px 22px;
+
+text-decoration:none;
+
+color:#222;
+
+font-size:14px;
+
+transition:.3s;
+
+}
+
+.dropdown-link:hover{
+
+background:#faf7f2;
+
+color:#b9985a;
+
+}

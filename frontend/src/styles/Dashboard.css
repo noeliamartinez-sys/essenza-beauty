@@ -1,28 +1,134 @@
-.hero {
-  height: 80vh;
-  width: 100%;
-  background-image: url("https://images.pexels.com/photos/19705886/pexels-photo-19705886.jpeg?_gl=1*1wc05ax*_ga*MTc3NjgxMzM1MS4xNzgwOTUxNTU0*_ga_8JE65Q40S6*czE3ODIyNjA2MzMkbzYkZzEkdDE3ODIyNjE1MDckajI5JGwwJGgw");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.dashboard-hero{
+  height:80vh;
+  width:100%;
+  background-image:url("https://images.pexels.com/photos/19705886/pexels-photo-19705886.jpeg?_gl=1*1wc05ax*_ga*MTc3NjgxMzM1MS4xNzgwOTUxNTU0*_ga_8JE65Q40S6*czE3ODIyNjA2MzMkbzYkZzEkdDE3ODIyNjE1MDckajI5JGwwJGgw");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
-.hero-content {
-  background: rgba(0,0,0,0.55);
-  padding: 40px;
-  border-radius: 15px;
-  text-align: center;
-  color: white;
+.dashboard-hero-content{
+  background:rgba(0,0,0,.55);
+  padding:40px;
+  border-radius:18px;
+  text-align:center;
+  color:white;
 }
 
-.hero-logo {
-  width: 90px;
-  margin-bottom: 10px;
+.dashboard-hero-logo{
+  width:90px;
+  margin:0 auto 15px;
 }
 
-.hero h1 {
-  font-size: 48px;
-  letter-spacing: 2px;
+.dashboard-hero h1{
+  font-size:48px;
+  letter-spacing:2px;
+  font-weight:300;
+  margin-bottom:15px;
+}
+
+.dashboard-hero p{
+  font-size:18px;
+  color:#f2f2f2;
+}
+/* ===========================
+   PANEL DE ADMINISTRACIÓN
+=========================== */
+
+.dashboard{
+display:flex;
+min-height:100vh;
+background:#f8f6f3;
+}
+
+.dashboard-sidebar{
+width:260px;
+background:#111;
+padding:45px 30px;
+}
+
+.dashboard-sidebar h2{
+color:#b9985a;
+font-weight:300;
+letter-spacing:4px;
+margin-bottom:50px;
+}
+
+.dashboard-sidebar nav{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.dashboard-sidebar a{
+color:white;
+padding:14px 18px;
+border-radius:12px;
+transition:.3s;
+}
+
+.dashboard-sidebar a:hover{
+background:#b9985a;
+}
+
+.dashboard-main{
+flex:1;
+padding:60px;
+}
+
+.dashboard-main h1{
+font-size:42px;
+font-weight:300;
+margin-bottom:40px;
+}
+
+.dashboard-cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+margin-bottom:45px;
+}
+
+.dashboard-card{
+background:white;
+padding:35px;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.dashboard-card svg{
+color:#b9985a;
+margin-bottom:18px;
+}
+
+.dashboard-card h2{
+font-size:40px;
+margin-bottom:8px;
+}
+
+.dashboard-card span{
+color:#777;
+}
+
+.dashboard-box{
+background:white;
+padding:40px;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.dashboard-btn{
+display:inline-block;
+margin-top:30px;
+padding:16px 36px;
+background:#111;
+color:white;
+border-radius:40px;
+transition:.3s;
+}
+
+.dashboard-btn:hover{
+background:#b9985a;
 }

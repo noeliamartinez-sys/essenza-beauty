@@ -1,57 +1,70 @@
-import { useState } from "react";
-import api from "../services/api";
+import { useEffect, useState } from "react";
 
-function FormularioAgregarPerfume({ onProductoCreado }) {
+function FormularioAgregarPerfume({ perfumeEditar }) {
+
   const [perfume, setPerfume] = useState({
     nombre: "",
     marca: "",
-    categoria: "",
     precio: "",
-    stock: "",
     imagen: "",
   });
 
+  useEffect(() => {
+
+    if (perfumeEditar) {
+
+      setPerfume({
+        nombre: perfumeEditar.nombre || "",
+        marca: perfumeEditar.marca || "",
+        precio: perfumeEditar.precio || "",
+        imagen: perfumeEditar.imagen || "",
+      });
+
+    }
+
+  }, [perfumeEditar]);
+
   const handleChange = (e) => {
+
     setPerfume({
       ...perfume,
       [e.target.name]: e.target.value,
     });
+
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
+
     e.preventDefault();
 
-    try {
-      await api.post("/products", perfume);
+    if (perfumeEditar) {
+
+      alert("Perfume editado correctamente");
+
+    } else {
 
       alert("Perfume agregado correctamente");
 
-      setPerfume({
-        nombre: "",
-        marca: "",
-        categoria: "",
-        precio: "",
-        stock: "",
-        imagen: "",
-      });
-
-      if (onProductoCreado) {
-        onProductoCreado();
-      }
-    } catch (error) {
-      console.error(error);
-      alert("Error al agregar perfume");
     }
+
+    console.log(perfume);
+
   };
 
   return (
+
     <div className="card p-4 mt-4">
-      <h3>Agregar Perfume</h3>
+
+      <h3>
+
+        {perfumeEditar ? "Editar perfume" : "Agregar perfume"}
+
+      </h3>
 
       <form onSubmit={handleSubmit}>
+
         <input
           className="form-control mb-2"
-          type="text"
           name="nombre"
           placeholder="Nombre"
           value={perfume.nombre}
@@ -60,19 +73,9 @@ function FormularioAgregarPerfume({ onProductoCreado }) {
 
         <input
           className="form-control mb-2"
-          type="text"
           name="marca"
           placeholder="Marca"
           value={perfume.marca}
-          onChange={handleChange}
-        />
-
-        <input
-          className="form-control mb-2"
-          type="text"
-          name="categoria"
-          placeholder="Categoría"
-          value={perfume.categoria}
           onChange={handleChange}
         />
 
@@ -86,32 +89,25 @@ function FormularioAgregarPerfume({ onProductoCreado }) {
         />
 
         <input
-          className="form-control mb-2"
-          type="number"
-          name="stock"
-          placeholder="Stock"
-          value={perfume.stock}
-          onChange={handleChange}
-        />
-
-        <input
           className="form-control mb-3"
-          type="text"
           name="imagen"
           placeholder="URL Imagen"
           value={perfume.imagen}
           onChange={handleChange}
         />
 
-        <button
-          type="submit"
-          className="btn btn-primary"
-        >
-          Agregar Perfume
+        <button className="btn btn-dark">
+
+          {perfumeEditar ? "Guardar cambios" : "Agregar perfume"}
+
         </button>
+
       </form>
+
     </div>
+
   );
+
 }
 
 export default FormularioAgregarPerfume;
