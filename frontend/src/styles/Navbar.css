@@ -254,3 +254,21 @@ color:#b9985a;
   align-items: center;
   gap: 12px;
 }
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.auth-buttons a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: inherit;
+  white-space: nowrap;
+}
