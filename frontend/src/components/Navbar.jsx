@@ -1,11 +1,6 @@
 import "../styles/Navbar.css";
 import { useEffect, useState } from "react";
-import {
-  Search,
-  Heart,
-  User,
-  LogOut
-} from "lucide-react";
+import { Search, Heart, User, LogOut } from "lucide-react";
 import { Link } from "react-router-dom";
 import CartButton from "./CartButton";
 
@@ -15,7 +10,6 @@ function Navbar({ abrirCarrito }) {
   const [menuUsuario, setMenuUsuario] = useState(false);
 
   useEffect(() => {
-
     const cambiarNavbar = () => {
       setScroll(window.scrollY > 80);
     };
@@ -25,13 +19,11 @@ function Navbar({ abrirCarrito }) {
     return () => {
       window.removeEventListener("scroll", cambiarNavbar);
     };
-
   }, []);
 
   const token = localStorage.getItem("token");
 
   return (
-
     <nav className={scroll ? "navbar navbar-scroll" : "navbar"}>
 
       <div className="logo">
@@ -40,101 +32,75 @@ function Navbar({ abrirCarrito }) {
       </div>
 
       <div className="nav-links">
-
         <a href="#inicio">Inicio</a>
         <a href="#marcas">Marcas</a>
         <a href="#coleccion">Colección</a>
         <a href="#nosotros">Nosotros</a>
         <a href="#contacto">Contacto</a>
-
       </div>
 
       <div className="nav-icons">
 
         <button className="icon-btn">
-          <Search size={20}/>
+          <Search size={20} />
         </button>
 
         <button className="icon-btn">
-          <Heart size={20}/>
+          <Heart size={20} />
         </button>
 
-        {
+        {/* USUARIO */}
+        {token ? (
+          <div className="user-dropdown">
 
-          token ?
-
-          (
-
-            <div className="user-dropdown">
-
-              <button
-                className="icon-btn"
-                onClick={() => setMenuUsuario(!menuUsuario)}
-              >
-
-                <User size={20}/>
-
-              </button>
-
-              {
-
-                menuUsuario &&
-
-                <div className="dropdown-menu">
-
-                  <button
-                    onClick={()=>{
-                      localStorage.removeItem("token");
-                      window.location.reload();
-                    }}
-                  >
-
-                    <LogOut size={18}/>
-
-                    Cerrar sesión
-
-                  </button>
-
-                </div>
-
-              }
-
-            </div>
-
-          )
-
-          :
-
-          (
-
-            <Link
-              to="/login"
+            <button
               className="icon-btn"
+              onClick={() => setMenuUsuario(!menuUsuario)}
             >
-              <Link
-  to="/dashboard"
-  className="dropdown-link"
->
-  Panel de administración
-</Link>
+              <User size={20} />
+            </button>
 
-              <User size={20}/>
+            {menuUsuario && (
+              <div className="dropdown-menu">
 
+                <button
+                  onClick={() => {
+                    localStorage.removeItem("token");
+                    window.location.reload();
+                  }}
+                >
+                  <LogOut size={18} />
+                  Cerrar sesión
+                </button>
+
+              </div>
+            )}
+
+          </div>
+
+        ) : (
+
+          <div className="auth-buttons">
+
+            <Link to="/login" className="icon-btn">
+              <User size={20} />
+              Iniciar sesión
             </Link>
-            
 
-          )
+            <Link to="/register" className="icon-btn">
+              Registrarse
+            </Link>
 
-        }
+          </div>
 
-        <CartButton abrirCarrito={abrirCarrito}/>
+        )}
+
+        <CartButton abrirCarrito={abrirCarrito} />
 
       </div>
 
     </nav>
-
   );
-
 }
 
 export default Navbar;
