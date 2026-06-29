@@ -14,21 +14,21 @@ h3 {
 }
 
 .table thead {
-  background-color: #d98ba6;
+  background-color: #d4af37;
   color: white;
 }
 
 .btn-primary {
-  background-color: #d98ba6;
+  background-color: #d4af37;
   border: none;
 }
 
 .btn-primary:hover {
-  background-color: #c97895;
+  background-color: #d4af37;
 }
 
 .form-control:focus {
-  border-color: #d98ba6;
+  border-color: #d4af37;
   box-shadow: none;
 }
 

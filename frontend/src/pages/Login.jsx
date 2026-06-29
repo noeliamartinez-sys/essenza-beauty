@@ -1,60 +1,104 @@
+import "./../styles/Login.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import api from "../services/api";
 
-function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+function Login(){
 
-  const navigate = useNavigate();
+const[email,setEmail]=useState("");
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
+const[password,setPassword]=useState("");
 
-    try {
-      const response = await api.post("/users/login", {
-        email,
-        password,
-      });
+const navigate=useNavigate();
 
-      localStorage.setItem("token", response.data.token);
+const handleLogin=async(e)=>{
 
-      alert("Login correcto");
+e.preventDefault();
 
-      navigate("/");
-    } catch (error) {
-      console.error(error);
-      alert("Error al iniciar sesión");
-    }
-  };
+try{
 
-  return (
-    <div className="container mt-5">
-      <h2>Iniciar Sesión</h2>
+const response=await api.post("/users/login",{
 
-      <form onSubmit={handleLogin}>
-        <input
-          className="form-control mb-3"
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+email,
 
-        <input
-          className="form-control mb-3"
-          type="password"
-          placeholder="Contraseña"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+password
 
-        <button className="btn btn-primary">
-          Ingresar
-        </button>
-      </form>
-    </div>
-  );
+});
+
+localStorage.setItem("token",response.data.token);
+
+navigate("/");
+
+}
+
+catch{
+
+alert("Datos incorrectos");
+
+}
+
+};
+
+return(
+
+<div className="login-page">
+    
+
+<div className="login-card">
+
+    <h1>ESSENZA</h1>
+    <p>Iniciar sesión</p>
+
+<form onSubmit={handleLogin}>
+
+<input
+
+type="email"
+
+placeholder="Correo"
+
+value={email}
+
+onChange={(e)=>setEmail(e.target.value)}
+
+/>
+
+<input
+
+type="password"
+
+placeholder="Contraseña"
+
+value={password}
+
+onChange={(e)=>setPassword(e.target.value)}
+
+/>
+
+<button>
+
+Ingresar
+
+</button>
+
+</form>
+
+<div className="link">
+
+<Link to="/register">
+
+Crear una cuenta
+
+</Link>
+
+</div>
+
+</div>
+
+</div>
+
+);
+
 }
 
 export default Login;

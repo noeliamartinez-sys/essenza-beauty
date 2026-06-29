@@ -2,22 +2,23 @@ import { ShoppingBag } from "lucide-react";
 import { useCart } from "../context/CartContext";
 import "../styles/Navbar.css";
 
-function CartButton() {
+function CartButton({ abrirCarrito }) {
 
-  const { cart } = useCart();
-
-  const cantidad = cart.reduce(
-    (acc, item) => acc + item.cantidad,
-    0
-  );
+  const { cantidadTotal } = useCart();
 
   return (
 
-    <button className="cart-button">
+    <button
+      className="cart-button"
+      onClick={abrirCarrito}
+    >
 
-      <ShoppingBag size={18} strokeWidth={1.8}/>
+      <ShoppingBag
+        size={18}
+        strokeWidth={1.8}
+      />
 
-      <span>{cantidad}</span>
+      <span>{cantidadTotal}</span>
 
     </button>
 

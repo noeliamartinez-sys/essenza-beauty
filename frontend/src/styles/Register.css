@@ -1,0 +1,142 @@
+.register-page{
+
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    linear-gradient(rgba(18,18,18,.55),rgba(18,18,18,.55)),
+    url("https://images.pexels.com/photos/23358709/pexels-photo-23358709.jpeg?_gl=1*z1cbu7*_ga*MTc3NjgxMzM1MS4xNzgwOTUxNTU0*_ga_8JE65Q40S6*czE3ODI2NjYxOTgkbzEwJGcxJHQxNzgyNjY2MzEzJGoxMiRsMCRoMA..");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    padding:40px;
+
+}
+
+.register-card{
+
+    width:450px;
+    background:white;
+    padding:50px;
+    border-radius:25px;
+
+    box-shadow:0 30px 80px rgba(0,0,0,.25);
+
+}
+
+.register-card h1{
+
+    text-align:center;
+    font-size:45px;
+    letter-spacing:6px;
+    color:#111;
+
+    margin-bottom:5px;
+
+}
+
+.register-card h3{
+
+    text-align:center;
+    font-weight:400;
+    color:#b9985a;
+font-size:20px;
+    margin-bottom:40px;
+
+}
+
+.register-card input{
+
+    width:100%;
+    padding:16px;
+
+    margin-bottom:18px;
+
+    border:1px solid #ddd;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    color:#222;
+
+    background:white;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.register-card input::placeholder{
+
+    color:#888;
+
+}
+
+.register-card input:focus{
+
+    border:1px solid #b9985a;
+
+    box-shadow:0 0 0 4px rgba(185,152,90,.12);
+
+}
+
+.register-card button{
+
+    width:100%;
+
+    padding:17px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#b9985a;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.register-card button:hover{
+
+    background:#a88647;
+
+    transform:translateY(-2px);
+
+}
+
+.register-links{
+
+    margin-top:28px;
+
+    text-align:center;
+
+}
+
+.register-links a{
+
+    text-decoration:none;
+
+    color:#b9985a;
+
+    font-weight:600;
+font-size:18px;
+}
+
+.register-links a:hover{
+
+    color:#111;
+
+}

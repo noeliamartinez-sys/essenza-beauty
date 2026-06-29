@@ -1,45 +1,50 @@
+import { useState } from "react";
 import "../styles/Newsletter.css";
 
-function Newsletter(){
+function Newsletter() {
 
-return(
+  const [email, setEmail] = useState("");
 
-<section className="newsletter">
+  const suscribirse = () => {
 
-<p>
+    if (!email.includes("@")) {
+      alert("Ingresá un correo válido.");
+      return;
+    }
 
-NEWSLETTER
+    alert("¡Gracias por suscribirte!");
 
-</p>
+    setEmail("");
+  };
 
-<h2>
+  return (
 
-Recibe novedades y lanzamientos exclusivos
+    <section className="newsletter">
 
-</h2>
+      <p>NEWSLETTER</p>
 
-<div className="newsletter-form">
+      <h2>
+        Recibe novedades y lanzamientos exclusivos
+      </h2>
 
-<input
+      <div className="newsletter-form">
 
-type="email"
+        <input
+          type="email"
+          placeholder="Tu correo electrónico"
+          value={email}
+          onChange={(e)=>setEmail(e.target.value)}
+        />
 
-placeholder="Tu correo electrónico"
+        <button onClick={suscribirse}>
+          Suscribirme
+        </button>
 
-/>
+      </div>
 
-<button>
+    </section>
 
-Suscribirme
-
-</button>
-
-</div>
-
-</section>
-
-);
-
+  );
 }
 
 export default Newsletter;

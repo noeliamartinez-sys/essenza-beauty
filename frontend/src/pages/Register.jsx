@@ -1,67 +1,97 @@
+import "../styles/Register.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import api from "../services/api";
 
 function Register() {
-  const [nombre, setNombre] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
-  const navigate = useNavigate();
+    const [nombre, setNombre] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-  const handleRegister = async (e) => {
-    e.preventDefault();
+    const navigate = useNavigate();
 
-    try {
-      await api.post("/users/register", {
-        nombre,
-        email,
-        password,
-      });
+    const handleRegister = async (e) => {
 
-      alert("Usuario registrado");
+        e.preventDefault();
 
-      navigate("/login");
-    } catch (error) {
-      console.error(error);
-      alert("Error al registrar usuario");
-    }
-  };
+        try {
 
-  return (
-    <div className="container mt-5">
-      <h2>Registro</h2>
+            await api.post("/users/register", {
+                nombre,
+                email,
+                password
+            });
 
-      <form onSubmit={handleRegister}>
-        <input
-          className="form-control mb-3"
-          placeholder="Nombre"
-          value={nombre}
-          onChange={(e) => setNombre(e.target.value)}
-        />
+            alert("Usuario registrado correctamente");
 
-        <input
-          className="form-control mb-3"
-          placeholder="Email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+            navigate("/login");
 
-        <input
-          className="form-control mb-3"
-          placeholder="Contraseña"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        } catch {
 
-        <button className="btn btn-success">
-          Registrarse
-        </button>
-      </form>
-    </div>
-  );
+            alert("No se pudo registrar");
+
+        }
+
+    };
+
+    return (
+
+        <div className="register-page">
+
+            <div className="register-card">
+
+                <h1>ESSENZA</h1>
+
+                <h3>Registrarse</h3>
+
+                <form onSubmit={handleRegister}>
+
+                    <input
+                        type="text"
+                        placeholder="Nombre"
+                        value={nombre}
+                        onChange={(e)=>setNombre(e.target.value)}
+                    />
+
+                    <input
+                        type="email"
+                        placeholder="Correo electrónico"
+                        value={email}
+                        onChange={(e)=>setEmail(e.target.value)}
+                    />
+
+                    <input
+                        type="password"
+                        placeholder="Contraseña"
+                        value={password}
+                        onChange={(e)=>setPassword(e.target.value)}
+                    />
+
+                    <button type="submit">
+
+                        Crear cuenta
+
+                    </button>
+
+                </form>
+
+                <div className="register-links">
+
+                    <Link to="/login">
+
+                        Ya tengo una cuenta
+
+                    </Link>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    );
+
 }
 
 export default Register;

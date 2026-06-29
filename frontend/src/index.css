@@ -60,7 +60,7 @@ body {
 
 width:100%;
 
-min-height:200vh;
+min-height:100vh;
 
 display:flex;
 
@@ -68,6 +68,7 @@ flex-direction:column;
 
 background:#f8f4f1;
 
+overflow-x:hidden;
 
 }
 
@@ -292,6 +293,19 @@ box-shadow:0 10px 20px rgba(0,0,0,.15);
 
 }
 .about-text p {
-  margin-bottom: 20px; /* esto crea el espacio entre párrafos */
-  line-height: 1.7;    /* mejora la lectura */
+  margin-bottom: 20px; 
+  line-height: 1.7;    
+}
+body{
+    margin:0;
+    padding:0;
+}
+
+#root{
+    margin:0;
+    padding:0;
+}
+
+section{
+    margin:0;
 }

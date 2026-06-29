@@ -1,59 +1,60 @@
 import "../styles/ProductosDestacados.css";
-import ProductCard from "./ProductCard";
 
-function ProductosDestacados({ perfumes, onSelect }) {
+function ProductosDestacados() {
+
+  const irColeccion = () => {
+    document
+      .getElementById("catalogo")
+      ?.scrollIntoView({
+        behavior: "smooth",
+      });
+  };
 
   return (
 
-    <section className="destacados" id="coleccion">
+    <section className="destacados">
 
       <div className="titulo-section">
 
         <span>
-
           ESSENZA COLLECTION
-
         </span>
 
         <h2>
-
           Fragancias que marcan tendencia
-
         </h2>
 
         <p>
-
-          Una selección exclusiva de las casas de perfumería más reconocidas del mundo.
-
+          Con estilo urbano. Diseñadas para quienes convierten cada aroma en una firma personal.
         </p>
 
       </div>
 
-      <div className="destacados-grid">
+      <div className="video-banner">
 
-        {perfumes.map((perfume) => (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
 
-          <ProductCard
-
-            key={perfume.id}
-
-            perfume={perfume}
-
-            onClick={onSelect}
-
+          <source
+            src="/Videos/campaign.mp4"
+            type="video/mp4"
           />
 
-        ))}
+        </video>
 
-      </div>
+        <div className="video-overlay">
 
-      <div className="ver-mas">
+          <button onClick={irColeccion}>
 
-        <button>
+            Ver colección completa
 
-          Ver colección completa
+          </button>
 
-        </button>
+        </div>
 
       </div>
 

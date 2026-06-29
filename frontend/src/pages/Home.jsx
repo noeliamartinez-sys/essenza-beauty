@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 import perfumes from "../data/perfumes";
@@ -18,12 +19,14 @@ import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import DetallePerfume from "../components/DetallePerfume";
 import LuxurySection from "../components/LuxurySection";
+import Cart from "../components/Cart";
+import Explorar from "../components/Explorar";
 import "../styles/Home.css";
 
 function Home() {
-
+const [carritoAbierto, setCarritoAbierto] = useState(false);
   const [selected, setSelected] = useState(null);
-
+const [marca, setMarca] = useState("Todas");
   const [busqueda, setBusqueda] = useState("");
 
   const [categoria, setCategoria] = useState("Todos");
@@ -56,15 +59,13 @@ function Home() {
 
       <BannerSuperior />
 
-      <Navbar />
+     <Navbar abrirCarrito={() => setCarritoAbierto(true)} />
 
       <Hero />
 <LuxurySection/>
       <Stats />
 
-      <Marcas />
-
-      <CategoriasPremium />
+      <Explorar perfumes={perfumes} setCategoria={setCategoria} />
 
       <Novedades />
 
@@ -78,9 +79,6 @@ function Home() {
 
       <ProductosDestacados
 
-        perfumes={perfumes.slice(0,4)}
-
-        onSelect={setSelected}
 
       />
 
@@ -134,7 +132,10 @@ function Home() {
         cerrar={() => setSelected(null)}
 
       />
-
+<Cart
+  abierto={carritoAbierto}
+  cerrar={() => setCarritoAbierto(false)}
+/>
     </div>
 
   );

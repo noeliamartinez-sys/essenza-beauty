@@ -1,0 +1,112 @@
+.login-page{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+    background:
+    linear-gradient(rgba(12,12,12,.72),rgba(12,12,12,.72)),
+    url("https://images.pexels.com/photos/23358709/pexels-photo-23358709.jpeg?_gl=1*12d0m9j*_ga*MTc3NjgxMzM1MS4xNzgwOTUxNTU0*_ga_8JE65Q40S6*czE3ODI2NjYxOTgkbzEwJGcxJHQxNzgyNjY3MzA5JGo2MCRsMCRoMA..");
+    background-size:cover;
+    background-position:center;
+}
+
+.login-card{
+    width:430px;
+    background:rgba(255,255,255,.97);
+    border-radius:20px;
+    padding:48px;
+    backdrop-filter:blur(15px);
+    box-shadow:0 30px 70px rgba(0,0,0,.30);
+    text-align:center;
+    font-size:18px;
+    color:#b9985a;
+}
+
+.login-logo{
+    margin-bottom:42px;
+    
+}
+
+.login-logo h1{
+    font-size:25px;
+    letter-spacing:10px;
+    font-weight:300;
+    color:#111;
+    margin-bottom:12px;
+   
+}
+
+.login-logo p{
+    font-size:15px;
+    color:#b9985a;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin:0;
+
+}
+
+.login-card input{
+    width:100%;
+    padding:16px;
+    margin-bottom:18px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    background:#fafafa;
+    font-size:15px;
+    color:#111;              
+    caret-color:#111;
+    transition:.3s;
+    outline:none;
+}
+
+.login-card input::placeholder{
+    color:#999;
+    
+}
+
+.login-card input:focus{
+    border-color:#b9985a;
+    box-shadow:0 0 0 4px rgba(185,152,90,.15);
+    
+    
+}
+
+.login-card button{
+    width:100%;
+    padding:17px;
+    margin-top:10px;
+    border:none;
+    border-radius:40px;
+    background:#b9985a;
+    color:white;
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:1px;
+    cursor:pointer;
+    transition:.35s;
+}
+
+.login-card button:hover{
+    background:#a8874d;
+    transform:translateY(-2px);
+    
+}
+
+.login-links{
+    margin-top:28px;
+    
+}
+
+.login-links a{
+    color:#b9985a;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+    
+}
+
+.login-links a:hover{
+    color:#111;
+    
+}
