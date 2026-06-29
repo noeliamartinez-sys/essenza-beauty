@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 
 import perfumes from "../data/perfumes";
@@ -6,10 +5,9 @@ import perfumes from "../data/perfumes";
 import Navbar from "../components/Navbar";
 import BannerSuperior from "../components/BannerSuperior";
 import Hero from "../components/Hero";
+import LuxurySection from "../components/LuxurySection";
 import Stats from "../components/Stats";
-import Marcas from "../components/Marcas";
-import CategoriasPremium from "../components/CategoriasPremium";
-import Novedades from "../components/Novedades";
+import Explorar from "../components/Explorar";
 import Buscador from "../components/Buscador";
 import ProductosDestacados from "../components/ProductosDestacados";
 import Sidebar from "../components/Sidebar";
@@ -18,15 +16,16 @@ import About from "../components/About";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import DetallePerfume from "../components/DetallePerfume";
-import LuxurySection from "../components/LuxurySection";
 import Cart from "../components/Cart";
-import Explorar from "../components/Explorar";
+
 import "../styles/Home.css";
 
 function Home() {
-const [carritoAbierto, setCarritoAbierto] = useState(false);
+
+  const [carritoAbierto, setCarritoAbierto] = useState(false);
+
   const [selected, setSelected] = useState(null);
-const [marca, setMarca] = useState("Todas");
+
   const [busqueda, setBusqueda] = useState("");
 
   const [categoria, setCategoria] = useState("Todos");
@@ -34,19 +33,11 @@ const [marca, setMarca] = useState("Todas");
   const filtrados = perfumes.filter((perfume) => {
 
     const coincideBusqueda =
-
-      perfume.nombre
-        .toLowerCase()
-        .includes(busqueda.toLowerCase()) ||
-
-      perfume.marca
-        .toLowerCase()
-        .includes(busqueda.toLowerCase());
+      perfume.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
+      perfume.marca.toLowerCase().includes(busqueda.toLowerCase());
 
     const coincideCategoria =
-
       categoria === "Todos" ||
-
       perfume.categoria === categoria;
 
     return coincideBusqueda && coincideCategoria;
@@ -59,28 +50,27 @@ const [marca, setMarca] = useState("Todas");
 
       <BannerSuperior />
 
-     <Navbar abrirCarrito={() => setCarritoAbierto(true)} />
+      <Navbar
+        abrirCarrito={() => setCarritoAbierto(true)}
+      />
 
       <Hero />
-<LuxurySection/>
+
+      <LuxurySection />
+
       <Stats />
 
-      <Explorar perfumes={perfumes} setCategoria={setCategoria} />
-
-      <Novedades />
+      <Explorar
+        perfumes={perfumes}
+        setCategoria={setCategoria}
+      />
 
       <Buscador
-
         busqueda={busqueda}
-
         setBusqueda={setBusqueda}
-
       />
 
-      <ProductosDestacados
-
-
-      />
+      <ProductosDestacados />
 
       <section
         className="catalogo"
@@ -88,32 +78,21 @@ const [marca, setMarca] = useState("Todas");
       >
 
         <Sidebar
-
           categoria={categoria}
-
           setCategoria={setCategoria}
-
         />
 
         <div className="catalogo-grid">
 
-          {
+          {filtrados.map((perfume) => (
 
-            filtrados.map((perfume) => (
+            <ProductCard
+              key={perfume.id}
+              perfume={perfume}
+              onClick={setSelected}
+            />
 
-              <ProductCard
-
-                key={perfume.id}
-
-                perfume={perfume}
-
-                onClick={setSelected}
-
-              />
-
-            ))
-
-          }
+          ))}
 
         </div>
 
@@ -126,16 +105,15 @@ const [marca, setMarca] = useState("Todas");
       <Footer />
 
       <DetallePerfume
-
         perfume={selected}
-
         cerrar={() => setSelected(null)}
-
       />
-<Cart
-  abierto={carritoAbierto}
-  cerrar={() => setCarritoAbierto(false)}
-/>
+
+      <Cart
+        abierto={carritoAbierto}
+        cerrar={() => setCarritoAbierto(false)}
+      />
+
     </div>
 
   );

@@ -4,7 +4,7 @@ function ProductosDestacados() {
 
   const irColeccion = () => {
     document
-      .getElementById("catalogo")
+      .getElementById("coleccion")
       ?.scrollIntoView({
         behavior: "smooth",
       });
@@ -38,20 +38,19 @@ function ProductosDestacados() {
           loop
           playsInline
         >
-
           <source
-            src="/Videos/campaign.mp4"
+            src="/videos/campaign.mp4"
             type="video/mp4"
           />
-
         </video>
 
         <div className="video-overlay">
 
-          <button onClick={irColeccion}>
-
+          <button
+            className="ver-mas-btn"
+            onClick={irColeccion}
+          >
             Ver colección completa
-
           </button>
 
         </div>
