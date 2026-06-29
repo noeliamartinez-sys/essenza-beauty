@@ -39,7 +39,7 @@ function ProductosDestacados() {
           playsInline
         >
           <source
-            src="/videos/campaign.mp4"
+            src="/temp_videos/campaign.mp4"
             type="video/mp4"
           />
         </video>
