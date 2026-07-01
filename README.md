@@ -1,22 +1,36 @@
-# 🌸 Essenza Beauty - Panel de Administración de Productos
+🌸 Essenza Beauty
 
-## Descripción del Proyecto
+Essenza Beauty es una aplicación web Full Stack desarrollada como proyecto académico para la gestión y venta de perfumes de lujo. El sistema cuenta con una interfaz moderna orientada al cliente y un panel de administración privado para gestionar el catálogo de productos.
 
-Essenza Beauty es una aplicación web Full Stack desarrollada como proyecto final. Su objetivo es proporcionar una herramienta interna para la gestión de un catálogo de productos de belleza y cuidado personal.
+La aplicación fue desarrollada utilizando una arquitectura cliente-servidor, separando el frontend y el backend, con el objetivo de aplicar buenas prácticas de desarrollo web, control de versiones y trabajo colaborativo.
 
-La aplicación permite administrar los productos mediante un panel privado, facilitando tareas como la creación, modificación, visualización y eliminación de productos dentro del sistema.
-
-Durante el desarrollo se aplicaron metodologías de trabajo colaborativo utilizando control de versiones, planificación de tareas y organización de roles dentro del equipo.
-
-## Funcionalidades
-
-* Visualización del catálogo de productos.
-* Alta de nuevos productos.
-* Edición de productos existentes.
-* Eliminación de productos.
-* Gestión de información como nombre, descripción, precio e imagen.
-* Navegación entre distintas secciones de la aplicación.
-* Interfaz responsive y amigable para el usuario.
+✨ Funcionalidades
+Sitio web para clientes
+Página principal con diseño responsive y estética premium.
+Navegación intuitiva mediante una barra de navegación fija.
+Banner informativo con promociones.
+Sección de productos destacados.
+Catálogo completo de perfumes.
+Búsqueda de productos por nombre o marca.
+Filtro dinámico por marcas.
+Visualización detallada de cada perfume.
+Carrito de compras con actualización automática de cantidades.
+Sección "Sobre Nosotros".
+Newsletter para suscripción.
+Footer con información y enlaces.
+Gestión de usuarios
+Registro de nuevos usuarios.
+Inicio de sesión mediante autenticación.
+Cierre de sesión.
+Persistencia de la sesión utilizando almacenamiento local (LocalStorage).
+Panel de administración
+Acceso al panel de administración.
+Listado completo de perfumes.
+Visualización de la información de cada producto.
+Alta de nuevos perfumes.
+Edición de productos existentes.
+Eliminación de perfumes.
+Gestión del catálogo mediante operaciones CRUD conectadas al backend.
 
 ## Tecnologías Utilizadas
 
@@ -41,4 +55,18 @@ Noelia Catherine Ada
 * Desarrollo de funcionalidades CRUD.
 * Organización de datos y pruebas de funcionamiento.
 * Colaboración en integración y documentación.
+
+https://trello.com/b/hPMVCvkJ/essenza-beauty
+
+🌸 VIDEO PRESENTACION, ENTRAR AL LINK:
+
+https://canva.link/a8qjiqkcgrxfhc5
+
+🌸 UNA VISTA SIMPLE EN VERCEL:
+https://essenza-beauty.vercel.app/
+
+
+
+
+
 
