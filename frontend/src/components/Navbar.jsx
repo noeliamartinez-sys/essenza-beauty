@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import CartButton from "./CartButton";
 
 function Navbar({ abrirCarrito }) {
-
   const [scroll, setScroll] = useState(false);
   const [menuUsuario, setMenuUsuario] = useState(false);
 
@@ -25,7 +24,6 @@ function Navbar({ abrirCarrito }) {
 
   return (
     <nav className={scroll ? "navbar navbar-scroll" : "navbar"}>
-
       <div className="logo">
         <span>✦</span>
         <h2>ESSENZA</h2>
@@ -40,7 +38,6 @@ function Navbar({ abrirCarrito }) {
       </div>
 
       <div className="nav-icons">
-
         <button className="icon-btn">
           <Search size={20} />
         </button>
@@ -49,10 +46,8 @@ function Navbar({ abrirCarrito }) {
           <Heart size={20} />
         </button>
 
-        {/* USUARIO */}
         {token ? (
           <div className="user-dropdown">
-
             <button
               className="icon-btn"
               onClick={() => setMenuUsuario(!menuUsuario)}
@@ -62,7 +57,6 @@ function Navbar({ abrirCarrito }) {
 
             {menuUsuario && (
               <div className="dropdown-menu">
-
                 <button
                   onClick={() => {
                     localStorage.removeItem("token");
@@ -72,33 +66,24 @@ function Navbar({ abrirCarrito }) {
                   <LogOut size={18} />
                   Cerrar sesión
                 </button>
-
               </div>
             )}
-
           </div>
-
         ) : (
-
           <div className="auth-buttons">
-
-            <Link to="/login" className="icon-btn">
-              <User size={20} />
-              Iniciar sesión
+            <Link to="/login" className="auth-btn">
+              <User size={18} />
+              <span>Iniciar sesión</span>
             </Link>
 
-            <Link to="/register" className="icon-btn">
+            <Link to="/register" className="auth-btn secondary">
               Registrarse
             </Link>
-
           </div>
-
         )}
 
         <CartButton abrirCarrito={abrirCarrito} />
-
       </div>
-
     </nav>
   );
 }
