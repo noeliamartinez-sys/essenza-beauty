@@ -58,16 +58,16 @@ const loginUser = async (req, res) => {
       });
     }
 
-    const token = jwt.sign(
-      {
-        id: user.id,
-        email: user.email,
-      },
-      "secreto_jwt",
-      {
-        expiresIn: "1h",
-      },
-    );
+   const token = jwt.sign(
+  {
+    id: user.id,
+    email: user.email,
+  },
+  process.env.JWT_SECRET || "secreto_jwt",
+  {
+    expiresIn: "1h",
+  }
+);
 
     res.json({
       message: "Login exitoso",

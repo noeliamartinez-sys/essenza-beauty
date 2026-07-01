@@ -12,6 +12,8 @@ import AgregarPerfume from "./pages/AgregarPerfume";
 import EditarPerfume from "./pages/EditarPerfume";
 import VerPerfume from "./pages/VerPerfume";
 
+import PrivateRoute from "./components/PrivateRoute";
+
 function App() {
   return (
     <BrowserRouter>
@@ -24,12 +26,50 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
 
-        <Route path="/perfumes" element={<Perfumes />} />
-        <Route path="/agregar-perfume" element={<AgregarPerfume />} />
-        <Route path="/editar-perfume/:id" element={<EditarPerfume />} />
-        <Route path="/ver-perfume/:id" element={<VerPerfume />} />
+        <Route
+          path="/perfumes"
+          element={
+            <PrivateRoute>
+              <Perfumes />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/agregar-perfume"
+          element={
+            <PrivateRoute>
+              <AgregarPerfume />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/editar-perfume/:id"
+          element={
+            <PrivateRoute>
+              <EditarPerfume />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/ver-perfume/:id"
+          element={
+            <PrivateRoute>
+              <VerPerfume />
+            </PrivateRoute>
+          }
+        />
 
       </Routes>
     </BrowserRouter>

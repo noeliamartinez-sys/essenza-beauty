@@ -3,101 +3,100 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import api from "../services/api";
 
-function Login(){
+function Login() {
 
-const[email,setEmail]=useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [cargando, setCargando] = useState(false);
 
-const[password,setPassword]=useState("");
+  const navigate = useNavigate();
 
-const navigate=useNavigate();
+  const handleLogin = async (e) => {
 
-const handleLogin=async(e)=>{
+    e.preventDefault();
 
-e.preventDefault();
+    setCargando(true);
 
-try{
+    try {
 
-const response=await api.post("/users/login",{
+      const response = await api.post("/users/login", {
+        email,
+        password
+      });
 
-email,
+      localStorage.setItem("token", response.data.token);
 
-password
+      if (response.data.user) {
+        localStorage.setItem(
+          "user",
+          JSON.stringify(response.data.user)
+        );
+      }
 
-});
+      navigate("/");
 
-localStorage.setItem("token",response.data.token);
+    } catch (error) {
 
-navigate("/");
+      alert("Correo o contraseña incorrectos.");
 
-}
+    } finally {
 
-catch{
+      setCargando(false);
 
-alert("Datos incorrectos");
+    }
 
-}
+  };
 
-};
+  return (
 
-return(
+    <div className="login-page">
 
-<div className="login-page">
-    
+      <div className="login-card">
 
-<div className="login-card">
+        <h1>ESSENZA</h1>
 
-    <h1>ESSENZA</h1>
-    <p>Iniciar sesión</p>
+        <p>Iniciar sesión</p>
 
-<form onSubmit={handleLogin}>
+        <form onSubmit={handleLogin}>
 
-<input
+          <input
+            type="email"
+            placeholder="Correo"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-type="email"
+          <input
+            type="password"
+            placeholder="Contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
 
-placeholder="Correo"
+          <button
+            type="submit"
+            disabled={cargando}
+          >
+            {cargando ? "Ingresando..." : "Ingresar"}
+          </button>
 
-value={email}
+        </form>
 
-onChange={(e)=>setEmail(e.target.value)}
+        <div className="link">
 
-/>
+          <Link to="/register">
+            Crear una cuenta
+          </Link>
 
-<input
+        </div>
 
-type="password"
+      </div>
 
-placeholder="Contraseña"
+    </div>
 
-value={password}
-
-onChange={(e)=>setPassword(e.target.value)}
-
-/>
-
-<button>
-
-Ingresar
-
-</button>
-
-</form>
-
-<div className="link">
-
-<Link to="/register">
-
-Crear una cuenta
-
-</Link>
-
-</div>
-
-</div>
-
-</div>
-
-);
+  );
 
 }
 
