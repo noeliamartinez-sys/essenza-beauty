@@ -56,6 +56,8 @@ Noelia Catherine Ada
 * Organización de datos y pruebas de funcionamiento.
 * Colaboración en integración y documentación.
 
+NUESTRO TRELLO (parte de la organización):
+
 https://trello.com/b/hPMVCvkJ/essenza-beauty
 
 🌸 VIDEO PRESENTACION, ENTRAR AL LINK:
@@ -63,6 +65,7 @@ https://trello.com/b/hPMVCvkJ/essenza-beauty
 https://canva.link/a8qjiqkcgrxfhc5
 
 🌸 UNA VISTA SIMPLE EN VERCEL:
+
 https://essenza-beauty.vercel.app/
 
 
